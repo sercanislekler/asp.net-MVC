@@ -1,0 +1,54 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblHakkimda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Hakkımda Listeleme</h4>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th class="bg-gradient-gray-dark">Ad</th>
+            <th class="bg-gradient-gray-dark">Soyad</th>
+            <th class="bg-gradient-gray-dark">Adres</th>
+            <th class="bg-gradient-gray-dark">Telefon</th>
+            <th class="bg-gradient-gray-dark">Mail</th>
+            <th class="bg-gradient-gray-dark">Açıklama</th>
+            <th class="bg-gradient-gray-dark">Resim</th>
+            <th class="bg-gradient-gray-dark">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Adres</td>
+            <td style="width:150px;">@item.Telefon</td>
+            <td>@item.Mail</td>
+            <td style="width:350px;">@item.Aciklama</td>
+            <td>@item.Resim</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Hakkimda/HakkimdaDuzenle/@item.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+       
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblIletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br/>
+<h4>İletişim Mesajları</h4>
+<br/>
+<table class="table">
+    <thead>
+        
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Mail</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th>Tarih</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.AdSoyad</td>
+            <td>@item.Mail</td>
+            <td>@item.Konu</td>
+            <td>@item.Mesaj</td>
+            <td>@item.Tarih</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
